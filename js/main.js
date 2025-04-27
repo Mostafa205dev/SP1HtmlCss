@@ -50,7 +50,17 @@ let nums = document.querySelectorAll(".stats .number");
 let statsSection = document.querySelector(".stats");
 let started = false; // Function Started ? No
 
+let scrollup = document.getElementById("button");
+
 window.onscroll = function () {
+  if (scrollup) {
+    if (window.scrollY >= 500) {
+      scrollup.style.display = 'block';
+    } else {
+      scrollup.style.display = 'none';
+    }
+  }
+  
   // Skills Animate Width
   if (window.scrollY >= section.offsetTop - 250) {
     progressSpans.forEach((span) => {
@@ -75,3 +85,5 @@ function startCount(el) {
     }
   }, 2000 / goal);
 }
+
+
