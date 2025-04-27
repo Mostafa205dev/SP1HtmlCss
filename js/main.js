@@ -75,6 +75,9 @@ window.onscroll = function () {
     started = true;
   }
 };
+scrollup.onclick = function (){
+  window.scrollTo(0,0);
+}
 
 function startCount(el) {
   let goal = el.dataset.goal;

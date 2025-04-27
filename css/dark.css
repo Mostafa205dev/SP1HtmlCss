@@ -167,7 +167,7 @@ a{
 }
 .main-title:hover{
   color: white;
-  border-color: red;
+  box-shadow: 5px 5px 10px var(--main-color);
   transition-delay: 0.3s;
 }
 .main-title::before,
@@ -222,10 +222,13 @@ a{
 button{
   position: fixed;
   right: 20px;
-  bottom: 5px;
+  bottom: 20px;
   z-index: 999;
   padding: 5px 10px;
-  display: none;
+  /* display: none; */
+  color: white;
+  background-color: var(--main-color-alt);
+  border-radius: 10px;
   cursor: pointer;
 }
 
