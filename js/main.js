@@ -51,7 +51,11 @@ let statsSection = document.querySelector(".stats");
 let started = false; // Function Started ? No
 
 let scrollup = document.getElementById("button");
-
+let scrolldown = document.getElementById("scrolldown");
+scrolldown.onclick = function(){
+  window.scrollTo(0,1000);
+  
+}
 window.onscroll = function () {
   if (scrollup) {
     if (window.scrollY >= 500) {
