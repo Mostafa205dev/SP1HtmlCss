@@ -43,22 +43,28 @@ document.addEventListener("click", function (event) {
 
 
 
-// latest events date
-let datenow = new Date();
-let birthday = new Date("Apr 29,25");
-let diff = datenow - birthday;
+// latest events
+const startDate = new Date("2025-04-20T00:00:00");
+function updateElapsedTime() {
+  const now = new Date();
+  let diffInSeconds = Math.floor((now - startDate) / 1000);
 
-const dayss = document.querySelector(".events .time .days");
-const hourss = document.querySelector(".events .time .hours");
-const Minutess = document.querySelector(".events .time .minutes");
-const Secondss = document.querySelector(".events .time .seconds");
+  const days = Math.floor(diffInSeconds / (60 * 60 * 24));
+  diffInSeconds %= (60 * 60 * 24);
 
-dayss.innerHTML =   `${ Math.floor(diff /1000 /60 /60 /24)}`;
-hourss.innerHTML =  `${ Math.floor(diff /1000 /60 /60)    }`;
-Minutess.innerHTML =`${ Math.floor(diff /1000 /60)        }`;
-Secondss.innerHTML =`${ Math.floor(diff /1000)            }`;
+  const hours = Math.floor(diffInSeconds / (60 * 60));
+  diffInSeconds %= (60 * 60);
 
+  const minutes = Math.floor(diffInSeconds / 60);
+  const seconds = diffInSeconds % 60;
 
+  document.querySelector(".days").innerHTML = days;
+  document.querySelector(".hours").innerHTML = hours;
+  document.querySelector(".minutes").innerHTML = minutes;
+  document.querySelector(".seconds").innerHTML = seconds;
+}
+updateElapsedTime();
+setInterval(updateElapsedTime, 1000);
 
 /*
  ** Animate Width On Scrolling
@@ -77,7 +83,7 @@ let nums = document.querySelectorAll(".stats .number");
 let statsSection = document.querySelector(".stats");
 let started = false; // Function Started ? No
 
-
+// buttons
 let scrollup = document.getElementById("button");
 let scrolldown = document.getElementById("scrolldown");
 scrolldown.onclick = function(){
@@ -86,6 +92,7 @@ scrolldown.onclick = function(){
 scrollup.onclick = function (){
   window.scrollTo(0,0);
 }
+
 
 window.onscroll = function () {
   if (scrollup) {
