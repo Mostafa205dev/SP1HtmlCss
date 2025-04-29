@@ -1349,6 +1349,10 @@ button{
   .header .links li a i{
     margin: 0px;
   }
+  .header .links li{
+    border-bottom: 1px solid black;
+  }
+  
 
 
   /* start landing */
