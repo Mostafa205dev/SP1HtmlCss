@@ -1328,8 +1328,7 @@ button{
 }
 
 /* Small */
-@media (max-width:767px) {
-
+@media (max-width:825px) {
   /* start header */
   .header .logo{
     width: 100% !important;
@@ -1340,18 +1339,17 @@ button{
   }
   .header .main-nav{
     padding: 10px;
-    margin-top: 10px;
     width: 100% !important;
     display: flex !important;
+    align-items: center;
     justify-content: space-around !important;
     height: 37px !important;
     overflow: hidden !important;
   }
-  .header .main-nav > li > a{
-    height: 72px;
-    padding: 0;
-    color: black;
-  }
+}
+@media (max-width:767px) {
+
+  /* start header */
   .header .megamenu{
     justify-content: center;
     gap: 0;
