@@ -77,7 +77,7 @@ a{
   flex-wrap: wrap;
   gap: 30px;
 }
-.header .main-nav li:hover .megamenu {
+.header .megamenu.active {
   opacity: 1;
   visibility: visible;
   transform: translateY(0);
